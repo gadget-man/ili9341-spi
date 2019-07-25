@@ -101,6 +101,8 @@ uint16_t mgos_ili9341_getStringWidth(const char *string);
 uint16_t mgos_ili9341_getStringHeight(const char *string);
 int mgos_ili9341_get_max_font_width(void);
 int mgos_ili9341_get_max_font_height(void);
+void ili9341_send_pixels(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t *buf, uint32_t buflen);
+bool mgos_ili9341_spi_init(void);
 
 // Returns Y position for line N for the currently selected font.
 // If n is negative, returns N-th line from the bottom.

@@ -155,7 +155,7 @@ static void ili9341_set_clip(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
 
 // buf represents a 16-bit RGB 565 uint16_t color buffer of length buflen bytes (so buflen/2 pixels).
 // Note: data in 'buf' has to be in network byte order!
-static void ili9341_send_pixels(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t *buf, uint32_t buflen) {
+void ili9341_send_pixels(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t *buf, uint32_t buflen) {
   uint16_t winsize = (x1 - x0 + 1) * (y1 - y0 + 1);
 
   if (y0 + s_window.y0 > s_window.y1 || x0 + s_window.x0 > s_window.x1) {
